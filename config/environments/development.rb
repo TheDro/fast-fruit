@@ -3,6 +3,13 @@ require "active_support/core_ext/integer/time"
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
+  config.identity_cache_store = :mem_cache_store, "localhost:11211", {
+    expires_in: 6.hours.to_i, # in case of network errors when sending a cache invalidation
+    failover: false, # avoids more cache consistency issues
+  }
+
+
+  
   # In the development environment your application's code is reloaded any time
   # it changes. This slows down response time but is perfect for development
   # since you don't have to restart the web server when you make code changes.

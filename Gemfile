@@ -57,3 +57,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 
 gem 'awesome_print'
+gem 'identity_cache'
+gem 'dalli'
